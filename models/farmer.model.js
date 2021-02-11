@@ -18,6 +18,8 @@ const farmerSchema = new mongoose.Schema({
   }
 });
 
+console.log('Oliver')
+
 const farmerModel = mongoose.model("farmer", farmerSchema);
 
 module.exports = farmerModel
