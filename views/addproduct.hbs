@@ -1,0 +1,23 @@
+  
+
+  <h2>Add Products</h2>
+<form method="POST" action="/add">
+  <div class="mb-3">
+    <label  class="form-label">Name</label>
+    <input name="name" type="text" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Quantity</label>
+    <input name="quantity" type="number" class="form-control">
+  </div>
+  <select name="product">
+    <option value="Vegetables">Vegetables</option>
+    <option value="AnimalProducts">Animal Products</option>
+  </select>
+  <div class="mb-3">
+    <label  class="form-label">Price
+        </label>
+    <input name="price" type="number" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

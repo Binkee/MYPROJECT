@@ -1,0 +1,54 @@
+const express = require('express');
+const productModel = require('../models/product.model');
+const router = express.Router();
+
+
+router.get("/add", (req,res,next)=>{
+  productModel.find()
+  .then((products) => {
+    res.render('addproduct.hbs', {products})
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+})
+
+router.get('/add', (req, res, next)  =>{
+  
+})
+
+
+
+
+router.post("/add",(req,res,next)=>{
+  const {name, quantity, product, price} = req.body
+  let newProduct = { 
+    product: product,
+    farmerID: req.session.loggedInUser._id,
+    name: name,
+    quantity: quantity,
+    price: price,
+    
+  }
+  console.log(newProduct)
+  productModel.create(newProduct)
+  .then((products) => {
+    res.redirect('/farmer-profile')
+  })
+})
+
+module.exports = router;
+
+/*const productSchema = new mongoose.Schema({
+  product:{
+    type: String,
+    enum: ['Vegetables', 'AnimalProducts']
+  },
+  farmerID: {
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: "farmer"
+  },
+  name: String,
+  quantity: Number,
+  price: Number
+});*/
