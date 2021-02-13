@@ -100,11 +100,3 @@ The url to your presentation slides
 
 
 Description Local Farm
-
-
-
-
-
-
-
-xcvbhjk
