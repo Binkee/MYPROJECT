@@ -70,6 +70,7 @@ router.post("/signin", (req, res, next) => {
                       if (isMatching) {
                           // when the user successfully signs up
                           req.session.loggedInUser = result
+                          console.log(req.session.loggedInUser)
                           res.redirect('/farmer-profile')
                       }
                       else {
@@ -110,9 +111,6 @@ router.post("/signin", (req, res, next) => {
       .catch((err) => {
           next(err)
       })
-
-   
- 
 });
 
 router.get('/logout', (req, res) => {

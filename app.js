@@ -14,6 +14,8 @@ const express = require("express");
 const hbs = require("hbs");
 
 const app = express();
+const path = require('path');
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require("./config")(app);
@@ -46,6 +48,9 @@ app.use(session({
 const index = require("./routes/index");
 app.use("/", index);
 
+const addRoutes = require("./routes/addproduct.routes");
+app.use("/", addRoutes);
+
 const authRoutes = require("./routes/auth.routes");
 app.use("/", authRoutes);
 
@@ -54,6 +59,9 @@ app.use("/", costumerRoutes )
 
 const farmerRoutes = require("./routes/farmer.routes")
 app.use("/", farmerRoutes)
+
+const searchRoutes = require("./routes/search.routes")
+app.use("/", searchRoutes);
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

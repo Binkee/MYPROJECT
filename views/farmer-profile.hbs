@@ -1,2 +1,38 @@
 <h1>Welcome farmer</h1>
 <a href="/logout">Logout</a>
+
+<h2>Available Products</h2>
+
+{{#each products}}
+<ul>
+  <li>ID:{{this._id}}</li>
+  <li>Name:{{this.name}}</li>
+<li>Product:{{this.product}}</li>
+<li>Quantity:{{this.quantity}}</li>
+<li>Price:{{this.price}}</li>
+</ul>
+<a href="/farmer-profile/{{_id}}">edit</a>
+<form method="POST" action="/farmer-profile/{{_id}}"><button>Delete</button></form>
+{{/each}}
+
+<a href="/add">Create Product</a>
+
+
+<!--<h2>Update Products</h2>
+<form method="POST" action="/drones/{{drone._id}}/edit">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input value="{{drone.name}}" name="myDrone" type="text" class="form-control" id="exampleInputEmail1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputDescription1" class="form-label">Propellers</label>
+    <input value="{{drone.propellers}}" name="myPropellers" type="text" class="form-control" id="exampleInputDescription1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputDescription1" class="form-label">Max speed</label>
+    <input value="{{drone.maxSpeed}}" name="myMaxSpeed" type="text" class="form-control" id="exampleInputDescription1">
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<form method="POST" action="/add">
+<a href="/add">Create Product</a></form>
