@@ -45,16 +45,3 @@ router.post("/add",(req,res,next)=>{
 
 module.exports = router;
 
-/*const productSchema = new mongoose.Schema({
-  product:{
-    type: String,
-    enum: ['Vegetables', 'AnimalProducts']
-  },
-  farmerID: {
-    type: mongoose.Schema.Types.ObjectId, 
-    ref: "farmer"
-  },
-  name: String,
-  quantity: Number,
-  price: Number
-});*/

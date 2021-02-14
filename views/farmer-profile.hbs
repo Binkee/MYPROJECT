@@ -3,7 +3,7 @@
 
 <h2>Available Products</h2>
 
-{{#each products}}
+{{#each product}}
 <ul>
   <li>ID:{{this._id}}</li>
   <li>Name:{{this.name}}</li>
@@ -16,6 +16,11 @@
 {{/each}}
 
 <a href="/add">Create Product</a>
+
+
+{{!-- COPY THIS --}}
+<a href="/farmer-profile">Delete Product</a>
+<a href="/farmer-profile/edit">Edit Product</a>
 
 
 <!--<h2>Update Products</h2>
