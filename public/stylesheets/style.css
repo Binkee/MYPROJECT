@@ -35,7 +35,10 @@ nav {
   border-radius: 15px;
 }
 
-
+#signup {
+  display: flex;
+  flex-direction: column;
+}
 a {
   color: #00b7ff; }
 
