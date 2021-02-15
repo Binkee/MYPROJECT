@@ -90,7 +90,8 @@ router.post("/signin", (req, res, next) => {
                             if (isMatching) {
                                 // when the user successfully signs up
                                 req.session.loggedInUser = result
-                                res.redirect('/costumer-profile')
+                                req.session.cart = [];
+                                res.redirect('/products')
                             }
                             else {
                                 // when passwords don't match

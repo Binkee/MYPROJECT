@@ -1,0 +1,17 @@
+<h3>list of products</h3>
+
+
+{{#each products}}
+<form action="/cart/{{this._id}}" method="POST">
+<ul>
+{{this.name}}
+{{this.price}}</ul>
+<input type="number" name="quantity" max="{{this.quantity}}">
+<input type="text" name="name" value="{{this.name}}" readonly>
+<button type="submit">Add</button>
+</form>
+
+
+{{/each}}
+
+<a href="/products">reset</a>

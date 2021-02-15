@@ -15,10 +15,25 @@
       <nav class="navbar navbar-light bg-light" id="navbar">
          <p>Logo</p>
          <div class="container">
-            <form class="d-flex" method="POST" action="/search">
-               <input  name="searchResult" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" method="GET" action="products">
+               <input  name="search" class="form-control me-2" type="search" placeholder="Search">
                <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            {{#if cart}}  
+            <div>
+               
+               <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Shopping cart
+               </a>
+               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               {{#each cart}}     
+                  <li><a class="dropdown-item" href="#"> {{this.quantity}} {{this.name}}</a></li>
+               {{/each}}
+               </ul>
+               </li>
+            </div>
+            {{/if}}  
             <div id="btn3">
                <a href="/signin">Sign In</a>
                <a href="/signup">Sign Up</a>
@@ -26,12 +41,13 @@
          </div>   
       </nav>
 
-      <div style="background-image:"/public/images/taylor-siebert-XuGmpWwt3xc-unsplash.jpg">
+      <div class="image" style="background:url('/images/taylor-siebert-XuGmpWwt3xc-unsplash.jpg')">
       
          
       {{{body}}}
 
       <script src="/js/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
    </body>
 
 </html>
