@@ -1,41 +1,91 @@
+@font-face {
+  font-family: LOKICOLA;
+  src: url(LOKICOLA.TTF);
+}
+
+.colafont{
+  font-family: "Roboto";
+  font-size: 60px;
+  text-shadow: 0 0 1px #494747;
+}
+
+html{
+  height: 100%;
+  margin: 0px;
+
+}
+.cow{
+  background: #c7cfb7;
+  height: 150px;
+}
+
+.farmer {
+  height: 200px;
+}
 body {
-  padding: 50px;
+  
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
   width: 100%; 
   height: 100%;
+  margin: 0px;
   
 }
 
-nav {
+#navbar  {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background: #9dad7f !important;
+  
 }
 
-.container{
-  display: flex;
+.logo {
+  height: 125px;
+  width: 125px;
+  border-radius: 25px 25px 25px 25px;
+  background: #9dad7f ;
 }
 .div2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 50px;
-  border: 1px solid;  
-  border-radius: 15px;
-  text-decoration: none;
-  
+  height: 300px;
+  width: 300px;
+}
+
+section {
+ padding-left: 200px;
+ padding-right: 200px;
+ border: 1px solid;
+ height: 80%;
+ background-color: #c7cfb7;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 #btn  {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid;
-  padding-top: 50px;
-  font-size: 24px;
+  border: 0.5px solid;
   border-radius: 15px;
+  padding-top: 100px;
+  font-size: 24px;
+  height: 60%;
+  margin-top: 100px;
+  box-shadow: 6px 5px 6px 5px rgba(20, 19, 19, 0.533);
+  padding-right: 100px;
+  padding-left: 100px;
 }
-
+.btn-shadow {
+  box-shadow: 1px 1px 2px 2px #8888;
+}
+p{
+  text-align: center;
+  font-family: "Roboto";
+}
 #signup {
   display: flex;
   flex-direction: column;
@@ -49,5 +99,17 @@ h1 {
 li{
   list-style-type: none;
 }
+
+.bottom{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #557174;
+  height: 90px;
+  position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+  
 
 /*# sourceMappingURL=style.css.map */

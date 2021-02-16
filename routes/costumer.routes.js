@@ -23,11 +23,13 @@ router.post('/cart/:id', (req,res,next)=>{
   let id = req.params.id
   let quantity = req.body.quantity
   let name = req.body.name
+  let price = req.body.price
   
   let newProduct = {
     id: id,
     quantity: quantity,
-    name: name
+    name: name,
+    price: price,
   }
   req.session.cart.push(newProduct)
   res.redirect("/costumer-profile")
@@ -55,6 +57,29 @@ router.get('/products',checkLoggedInUser, (req,res,next)=>{
  
   }
 )
+
+router.post('/submitOrder',(req,res,next)=>{
+  let total = 0;
+  for(let i = 0; i < req.session.cart.length; i++) {
+    total += req.session.cart[i].quantity * req.session.cart[i].price
+    productModel.findById(req.session.cart[i].id)
+    .then((product)=>{
+     let newQuantity = product.quantity - req.session.cart[i].quantity
+    productModel.findByIdAndUpdate(req.session.cart[i].id, {quantity: newQuantity})
+    .then(()=>{
+      req.session.cart = [];
+      res.redirect("/costumer-profile")
+    })
+    })
+  }
+}) 
+/*req.session.cart
+let total += this.quantity * this.price
+update products
+
+farmer quantity - orderd quantity
+.find(id, quantity)*/
+
 
 
 

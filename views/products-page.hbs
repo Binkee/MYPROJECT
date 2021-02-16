@@ -1,13 +1,16 @@
 <h3>list of products</h3>
-
+<a href="/logout">Logout</a>
 
 {{#each products}}
 <form action="/cart/{{this._id}}" method="POST">
 <ul>
-{{this.name}}
-{{this.price}}</ul>
+Product: {{this.name}} <br>
+Price: {{this.price}}<br>
+Quantity: {{this.quantity}}<br>
+</ul>
 <input type="number" name="quantity" max="{{this.quantity}}">
 <input type="text" name="name" value="{{this.name}}" readonly>
+<input type="number" name="price" value="{{this.price}}" readonly>
 <button type="submit">Add</button>
 </form>
 

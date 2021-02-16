@@ -1,6 +1,8 @@
 <h3>welcome costumer</h3>
 {{#each cart}}
-{{this.quantity}}
-{{this.name}}
+Product: {{this.name}}<br>
+Quantity: {{this.quantity}}<br>
+Price: {{this.price}}<br>
 {{/each}}
 <a href="/logout">Logout</a>
+<form method="POST" action="/submitOrder"><button>Confirm Order</button></form>
