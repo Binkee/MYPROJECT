@@ -1,9 +1,17 @@
-<h3>Sign in</h3>
-<form action="/signin" method="POST">
-  <label>Username</label>
-  <input type="text" name="username" placeholder="Enter your Username"  >
-  <label>Password</label>
-  <input type="password" name="password" placeholder="Enter your Password"  >
-  <button type="submit" >Sign In</button>
-  <a href="/signup">Create an account</a>
-</form>
+<div class="signin">
+  <img src="/images/cow.png" alt="cow" class="cow">
+  <section id="signin">
+    <h3 id="signin1">Sign in</h3>
+    <form action="/signin" method="POST" id="signinform">
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Enter your Username"  >
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter your Password"  >
+      <div id="btn2">
+        <button class="btn btn-dark btn-shadow" type="submit" >Sign In</button>
+        <a id="createacct" href="/signup"></a><button type="submit" class="btn btn-dark btn-shadow">Create an account</button></a>
+      </div>
+    </form>
+  </section>
+  <img src="/images/farmer1.png" alt="farmer" class="farmer">
+</div>
