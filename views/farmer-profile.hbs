@@ -1,13 +1,30 @@
-<h3>Welcome farmer</h3>
-<a href="/logout">Logout</a>
-
-{{#each product}}
-<ul>
-{{this.name}}
-{{this.quantity}}
-{{this.price}}</ul>
-<a href="/farmer-profile/{{this._id}}/edit">edit</a>
-<form method="POST" action="/farmer-profile/{{this._id}}/delete"><button>Delete</button></form>
-{{/each}}
-<a href="/add">Create Product</a>
+<div class="farmer-profile">
+  <h3>Welcome farmer</h3>
+  <a href="/logout"><button class="btn btn-dark btn-shadow">Log out</button></a>
+  <a href="/add"><button class="btn btn-dark btn-shadow">Create Products</button></a>
+  <table class="table">
+  <thead>
+    <tr>
+      
+      <th scope="col">Products</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each product}}
+    <tr>
+      
+      <td>{{this.name}}</td>
+      <td>{{this.quantity}}</td>
+      <td>{{this.price}}</td>
+      <td><a href="/farmer-profile/{{this._id}}/edit"><button class="btn btn-dark btn-shadow">Edit</button></a></td>
+      <td><form method="POST" action="/farmer-profile/{{this._id}}/delete"><button class="btn btn-dark btn-shadow">Delete</button></form></td>
+    </tr>
+     
+    
+    {{/each}}
+  </tbody>
+</table>
+</div>
 

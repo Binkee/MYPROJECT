@@ -142,7 +142,11 @@ label, input {
   margin-right: 200px;
 }
 
-
-
+.farmer-profile{
+  display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
 
 /*# sourceMappingURL=style.css.map */
