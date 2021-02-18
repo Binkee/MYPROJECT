@@ -8,12 +8,12 @@
   <div class="card-body">
      <form action="/cart/{{this._id}}" method="POST">
     <ul>
-      <p class="card-title">Products Available</p>
+      <p class="card-title"> <b> Products Available</b></p>
       <li>Product: {{this.name}} <br></li>
       <li>Price: {{this.price}}€<br></li>
       <li>Quantity: {{this.quantity}}<br></li>
     </ul>
-    <p class="card-text">Your Order Placement</p>
+    <p class="card-text"> <b>Your Order Placement</b> </p>
       <input class="form-control" type="text" name="name" value="{{this.name}}" readonly>
       <input class="form-control" type="number" name="quantity" max="{{this.quantity}}">
       <button class="btn btn-dark btn-shadow" type="submit">Add</button>

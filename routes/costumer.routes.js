@@ -70,7 +70,7 @@ router.post('/submitOrder',(req,res,next)=>{
     productModel.findByIdAndUpdate(req.session.cart[i].id, {quantity: newQuantity})
     .then(()=>{
       req.session.cart = [];
-      res.redirect("/costumer-profile")
+      res.redirect("/products")
     })
     })
   }
