@@ -1,27 +1,32 @@
 <p>Please choose what products you would like to order</p>
 <section id="products">
-  <h3>list of products</h3>
+  <h3>List of products</h3>
  {{#each products}}
 
 <div class="card" style="width: 18rem;">
   <!--<img src="..." class="card-img-top" alt="...">-->
-  <div class="card-body">
-     <form action="/cart/{{this._id}}" method="POST">
-    <ul>
-      <p class="card-title"> <b> Products Available</b></p>
-      <li>Product: {{this.name}} <br></li>
-      <li>Price: {{this.price}}€<br></li>
-      <li>Quantity: {{this.quantity}}<br></li>
-    </ul>
-    <p class="card-text"> <b>Your Order Placement</b> </p>
-      <input class="form-control" type="text" name="name" value="{{this.name}}" readonly>
-      <input class="form-control" type="number" name="quantity" max="{{this.quantity}}">
-      <button class="btn btn-dark btn-shadow" type="submit">Add</button>
+  <div class="card-body" >
+    <form action="/cart/{{this._id}}" method="POST">
+    <div>
+      <ul>
+        <p class="card-title"> <b> Products Available</b></p>
+        <li>Product: {{this.name}} <br></li>
+        <li>Price: {{this.price}}€<br></li>
+        <li>Quantity: {{this.quantity}}<br></li>
+      </ul>
+    </div>
+    <div>
+      <p class="card-text"> <b>Your Order Placement</b> </p>
+        <input class="form-control" type="text" name="name" value="{{this.name}}" readonly>
+        <input class="form-control" type="number" name="quantity" max="{{this.quantity}}">
+        <button class="btn btn-dark btn-shadow" type="submit">Add</button>
+        <a href="/products"><button class="btn btn-dark btn-shadow">Reset</button></a>
+    </div>
     </form>
     
   </div>
 </div>
 {{/each}}
-<a href="/products"><button class="btn btn-dark btn-shadow">reset</button></a>
+
 </section>
 

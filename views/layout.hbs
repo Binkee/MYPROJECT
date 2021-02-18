@@ -19,14 +19,17 @@
       <nav class="navbar navbar-light bg-light" id="navbar">
            <a href="/"><img class="logo" src="/images/LOGO.png" alt="local-farm-logo"></a>
             <form class="d-flex" method="GET" action="products">
-               <input  name="search" class="form-control me-2" type="search" placeholder="Search">
+            
+               <input id="searchbar" name="search" class="form-control me-2" type="search" placeholder="Search">
+             
                <button class="btn btn-dark btn-shadow" type="submit">Search</button>
             </form>
             {{#if cart}}  
             <div>
+               
                <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Shopping cart
+                <b>Shopping cart</b> 
                </a>
                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                {{#each cart}}     

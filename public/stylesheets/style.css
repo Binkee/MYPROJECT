@@ -1,7 +1,4 @@
-@font-face {
-  font-family: LOKICOLA;
-  src: url(LOKICOLA.TTF);
-}
+
 .colafont {
   font-family: "Roboto";
   font-size: 60px;
@@ -31,9 +28,10 @@ body {
   align-items: center;
   background: #9dad7f !important;
   position: fixed;
-  height: 10%;
+  
   width: 100%;
 }
+
 .logo {
   height: 100%;
   width: 18%;
@@ -45,11 +43,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 50px;
-  height: 300px;
   width: 300px;
 }
 .card {
   background-color: #c7cfb7;
+}
+
+#searchbar {
+  margin-right: 200px;
 }
 section {
   padding-left: 200px;
@@ -61,6 +62,38 @@ section {
   align-items: center;
   height: 100%;
 }
+.nav-link{
+  text-decoration: none  !important;
+  color: black;
+}
+
+#update-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+#form-update {
+  border: 0.5px solid;
+  border-radius: 15px;
+  box-shadow: 6px 5px 6px 5px rgba(20, 19, 19, 0.533);
+  height: 60%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+.veggies{
+  height: 250px;
+}
 #btn {
   display: flex;
   justify-content: center;
@@ -68,7 +101,8 @@ section {
   flex-direction: column;
   border: 0.5px solid;
   border-radius: 15px;
-  padding-top: 100px;
+  height: 60%;
+  width: 40%;
   font-size: 24px;
   box-shadow: 6px 5px 6px 5px rgba(20, 19, 19, 0.533);
   padding-right: 20px;
@@ -99,7 +133,7 @@ li {
   justify-content: space-around;
   align-items: center;
   background-color: #557174;
-  height: 4%;
+  height: 7%;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -112,7 +146,7 @@ li {
   border: 0.5px solid;
   border-radius: 15px;
   font-size: 24px;
-  height: 60%;
+  
   margin-top: 20px;
   box-shadow: 6px 5px 6px 5px rgba(20, 19, 19, 0.533);
   margin-right: 300px;
@@ -146,14 +180,18 @@ input {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  height: 60%;
+  text-align: center;
 }
 
 .signup {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  height: 60%;
+  
 }
 
 .farmer-profile {
@@ -164,7 +202,12 @@ input {
   border: 1px solid;
   box-shadow: 6px 5px 6px 5px rgba(20, 19, 19, 0.533);
   border-radius: 15px;
+  margin: 0 auto;
+  height: 60%;
+  width: 40%;
 }
+
+
 
 #addprod {
   display: flex;
@@ -181,11 +224,11 @@ input {
   border: 0.5px solid;
   border-radius: 15px;
   font-size: 24px;
-  height: 60%;
   margin-top: 20px;
   box-shadow: 6px 5px 6px 5px rgba(20, 19, 19, 0.533);
   margin-right: 300px;
   margin-left: 300px;
+  text-align: center;
 }
 #products {
   display: flex;
@@ -194,7 +237,7 @@ input {
   align-items: center;
 }
 
-.h3 {
+h3,h2,h4,h5,h6,h1,p {
   font-family: "Roboto";
 }
 

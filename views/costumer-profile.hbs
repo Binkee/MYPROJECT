@@ -1,11 +1,14 @@
-<h3>welcome costumer</h3>
-<section id="cost-profile">
-  <h2>Order Summary</h2>
-  <h6>Please confirm you order</h6>
-  {{#each cart}}
-  Product: {{this.name}}<br>
-  Quantity: {{this.quantity}}<br>
-  Price: {{this.price}}<br>
-  {{/each}}
-  <form method="POST" action="/submitOrder"><button class="btn btn-dark btn-shadow">Confirm Order</button></form>
+<section >
+  <img class="cow" src="/images/cow.png" alt="">
+  <div id="form-update">
+    <h2>Order Summary</h2>
+    <h4>Please confirm you order</h4>
+    {{#each cart}}
+      Product: {{this.name}}<br>
+      Quantity: {{this.quantity}}<br>
+      Price: {{this.price}}<br>
+    {{/each}}
+    <form method="POST" action="/submitOrder"><button class="btn btn-dark btn-shadow">Confirm Order</button></form>
+  </div>
+  <img class="farmer" src="/images/farmer1.png" alt="">
 </section>

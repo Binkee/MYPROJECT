@@ -1,7 +1,11 @@
-<section>
+
+
+<section id="section">
+
+<img class="cow" src="/images/cow.png" alt="">
 <div class="farmer-profile">
-  <h3>Welcome farmer</h3>
-  <a href="/add"><button class="btn btn-dark btn-shadow">Create Products</button></a>
+  <div><h3 class="hfarm">List your products to sell</h3></div>
+  
   <table class="table">
   <thead>
     <tr>
@@ -15,12 +19,15 @@
     <tr>
       <td>{{this.name}}</td>
       <td>{{this.quantity}}</td>
-      <td>{{this.price}}</td>
+      <td>€{{this.price}} </td>
       <td><a href="/farmer-profile/{{this._id}}/edit"><button class="btn btn-dark btn-shadow">Edit</button></a></td>
       <td><form method="POST" action="/farmer-profile/{{this._id}}/delete"><button class="btn btn-dark btn-shadow">Delete</button></form></td>
     </tr>
+    
     {{/each}}
   </tbody>
 </table>
+<a href="/add"><button class="btn btn-dark btn-shadow">Create Products</button></a>
 </div>
+<img class="farmer" src="/images/farmer1.png" alt="">
 </section>
