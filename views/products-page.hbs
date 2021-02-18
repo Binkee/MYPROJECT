@@ -1,20 +1,27 @@
-<h3>list of products</h3>
-<a href="/logout">Logout</a>
+<p>Please choose what products you would like to order</p>
+<section id="products">
+  <h3>list of products</h3>
+ {{#each products}}
 
-{{#each products}}
-<form action="/cart/{{this._id}}" method="POST">
-<ul>
-Product: {{this.name}} <br>
-Price: {{this.price}}<br>
-Quantity: {{this.quantity}}<br>
-</ul>
-<input type="number" name="quantity" max="{{this.quantity}}">
-<input type="text" name="name" value="{{this.name}}" readonly>
-<input type="number" name="price" value="{{this.price}}" readonly>
-<button type="submit">Add</button>
-</form>
-
-
+<div class="card" style="width: 18rem;">
+  <!--<img src="..." class="card-img-top" alt="...">-->
+  <div class="card-body">
+     <form action="/cart/{{this._id}}" method="POST">
+    <ul>
+      <p class="card-title">Products Available</p>
+      <li>Product: {{this.name}} <br></li>
+      <li>Price: {{this.price}}€<br></li>
+      <li>Quantity: {{this.quantity}}<br></li>
+    </ul>
+    <p class="card-text">Your Order Placement</p>
+      <input class="form-control" type="text" name="name" value="{{this.name}}" readonly>
+      <input class="form-control" type="number" name="quantity" max="{{this.quantity}}">
+      <button class="btn btn-dark btn-shadow" type="submit">Add</button>
+    </form>
+    
+  </div>
+</div>
 {{/each}}
+<a href="/products"><button class="btn btn-dark btn-shadow">reset</button></a>
+</section>
 
-<a href="/products">reset</a>

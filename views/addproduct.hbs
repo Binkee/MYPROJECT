@@ -1,24 +1,26 @@
   
 
+
+<section id="addprod">
   <h2>Add Products</h2>
-  <a href="/logout">Logout</a>
-<form method="POST" action="/add">
-  <div class="mb-3">
-    <label  class="form-label">Product name</label>
-    <input name="name" type="text" class="form-control">
-  </div>
-  <div class="mb-3">
-    <label  class="form-label">Quantity</label>
-    <input name="quantity" type="number" class="form-control">
-  </div>
-  <div class="mb-3">
-    <label  class="form-label">Price
-        </label>
-    <input name="price" type="number" class="form-control">
-  </div>
+  <p>Here you can add any of your products and make them available to potential customers</p>
+  <form method="POST" action="/add">
+    <div class="mb-3">
+      <label  class="form-label">Product:</label>
+      <input name="name" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Quantity:</label>
+      <input name="quantity" type="number" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Price:</label>
+      <input name="price" type="number" class="form-control">
+    </div>
     <select name="product">
-    <option value="Vegetables">Vegetables</option>
-    <option value="AnimalProducts">Animal Products</option>
-  </select>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+      <option value="Vegetables">Vegetables</option>
+      <option value="AnimalProducts">Animal Products</option>
+    </select>
+    <button type="submit" class="btn btn-dark btn-shadow">Add Product</button>
+  </form>
+</section>

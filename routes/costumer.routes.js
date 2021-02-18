@@ -16,7 +16,8 @@ const checkLoggedInUser = (req, res, next) => {
 
 // after sign in you go to the farmer profile
 router.get('/costumer-profile',checkLoggedInUser, (req,res,next)=>{
-  res.render('costumer-profile', {cart:req.session.cart} )
+  
+  res.render('costumer-profile', {cart:req.session.cart, user: req.session.loggedInUser} )
 })
 
 router.post('/cart/:id', (req,res,next)=>{
@@ -36,10 +37,11 @@ router.post('/cart/:id', (req,res,next)=>{
 })
 
 router.get('/products',checkLoggedInUser, (req,res,next)=>{
+  let user = req.session.loggedInUser 
   if(req.query && req.query.search){
     productModel.find({name:req.query.search})
     .then((products)=>{
-       res.render('products-page', {products})
+       res.render('products-page', {products, user: user})
     })
     .catch(()=>{
   
@@ -48,7 +50,7 @@ router.get('/products',checkLoggedInUser, (req,res,next)=>{
   else {
     productModel.find()
       .then((products)=>{
-        res.render('products-page', {products})
+        res.render('products-page', {products, user})
       })
       .catch(()=>{
 

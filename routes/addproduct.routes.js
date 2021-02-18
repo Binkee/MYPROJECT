@@ -4,20 +4,15 @@ const router = express.Router();
 
 
 router.get("/add", (req,res,next)=>{
+  let user = req.session.loggedInUser
   productModel.find()
   .then((products) => {
-    res.render('addproduct.hbs', {products})
+    res.render('addproduct.hbs', {products, user})
   })
   .catch((error) => {
     console.log(error)
   })
 })
-
-router.get('/add', (req, res, next)  =>{
-  
-})
-
-
 
 
 router.post("/add",(req,res,next)=>{
@@ -30,7 +25,7 @@ router.post("/add",(req,res,next)=>{
     price: price,
     
   }
-  console.log(newProduct)
+  //console.log(newProduct)
   productModel.create(newProduct)
   .then((products) => {
     res.redirect('/farmer-profile')

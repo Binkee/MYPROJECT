@@ -24,6 +24,7 @@ router.post("/signup", (req, res, next) => {
    // Encrypting passwords
     let salt = bcrypt.genSaltSync(10);
     let hash = bcrypt.hashSync(password, salt);
+    let user = req.session.loggedInUser
    
    // checking if the user has entered all the three fields 
     if (!username.length || !password.length) {
@@ -43,7 +44,7 @@ router.post("/signup", (req, res, next) => {
    } else {
      costumerModel.create({username, email, password: hash})
      .then(()=>{
-       res.render('costumer-profile')
+       res.redirect('costumer-profile')
      })
      .catch((err)=>{
        next(err)
@@ -63,6 +64,7 @@ router.post("/signin", (req, res, next) => {
   farmerModel.findOne({username: username})
       .then((result) => {
           // if user exists
+          
           if (result) {
               //check if the entered password matches with that in the DB
               bcrypt.compare(password, result.password)
@@ -70,7 +72,7 @@ router.post("/signin", (req, res, next) => {
                       if (isMatching) {
                           // when the user successfully signs up
                           req.session.loggedInUser = result
-                          console.log(req.session.loggedInUser)
+                          //console.log(req.session.loggedInUser)
                           res.redirect('/farmer-profile')
                       }
                       else {

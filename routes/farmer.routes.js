@@ -5,7 +5,7 @@ const farmerModel = require('../models/farmer.model.js')
 const productModel = require('../models/product.model.js')
 
 //Middleware
-const checkLoggedInUser = (req, res, next) => {
+const checkloggedInUser = (req, res, next) => {
   if (req.session.loggedInUser) {
       next()
   }
@@ -16,19 +16,22 @@ const checkLoggedInUser = (req, res, next) => {
 
 
 // after sign in you go to the farmer profile
-router.get('/farmer-profile',checkLoggedInUser, (req,res,next)=>{
+router.get('/farmer-profile',checkloggedInUser, (req,res,next)=>{
+  let user = req.session.loggedInUser
   productModel.find({farmerID:req.session.loggedInUser._id})
   .then((product)=>{
-    res.render('farmer-profile', {product})
+    console.log(user)
+    res.render('farmer-profile', {user ,product})
   })
   
 })
 
 router.get('/farmer-profile/:id/edit', (req, res, next) => {
   let id = req.params.id
+  let user = req.session.loggedInUser
   productModel.findById(id)
   .then((product)=>{
-    res.render('update-form.hbs', {product})
+    res.render('update-form.hbs', {product, user})
   })
   .catch(()=>{
     console.log('Something went wrong while finding')

@@ -17,10 +17,10 @@
    <body>
 
       <nav class="navbar navbar-light bg-light" id="navbar">
-            <img class="logo" src="/images/LOGO.png" alt="local-farm-logo">
+           <a href="/"><img class="logo" src="/images/LOGO.png" alt="local-farm-logo"></a>
             <form class="d-flex" method="GET" action="products">
                <input  name="search" class="form-control me-2" type="search" placeholder="Search">
-               <button class="btn btn-dark btn-shadow type="submit">Search</button>
+               <button class="btn btn-dark btn-shadow" type="submit">Search</button>
             </form>
             {{#if cart}}  
             <div>
@@ -38,10 +38,16 @@
             {{/if}}  
             <div id="btn3">
                
+            {{#if user}}
+             <a href="/"><button type="button" class="btn btn-dark btn-shadow">Log out</button></a>
 
 
+            {{else}}
                <a href="/signin"><button type="button" class="btn btn-dark btn-shadow">Sign in</button></a>
                <a href="/signup"><button type="button" class="btn btn-dark btn-shadow">Sign up</button></a>
+             
+            {{/if}}
+             
              </div>   
       </nav>
       

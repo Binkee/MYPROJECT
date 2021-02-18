@@ -1,17 +1,32 @@
-<div id="signup">
-    <h3>Sign Up</h3>
+
+<div class="signup" >
+  <img src="/images/cow.png" alt="cow" class="cow">
+  <section id="signup">
+    <div>
+      <h3>Sign Up</h3>
     <form action="/signup" method="POST">
-      <label>Username</label>
-      <input type="text" name="username" placeholder="Enter your Username"  >
-      <label>Email</label>
-      <input type="email" name="email" placeholder="Enter your Email">
-      <label>Password</label>
-     <input type="password" name="password" placeholder="Enter your Password"  >
-     <label>Role</label>
-     <select name="role">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Role</label>
+   <select name="role" class="form-control">
         <option value="farmer">Farmer</option>
         <option value="costumer">Costumer</option>
       </select>
-      <button type="submit">Sign In</button>
-    </form>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input  type="text" class="form-control inputwidth" name="username" placeholder="Enter your Username">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input   type="email" class="form-control inputwidth" name="email" placeholder="Enter your Email">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input  type="password" class="form-control inputwidth" id="exampleInputPassword1" name="password" placeholder="Create a Password">
+  </div>
+  <button type="submit" class="btn btn-dark btn-shadow">Submit</button>
+</form>
+</section>
+<img src="/images/farmer1.png" alt="farmer" class="farmer">
 </div>
+
